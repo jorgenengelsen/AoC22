@@ -29,7 +29,7 @@ def find_packet_start(message: str, window_length: int):
 
         if not char in cache.array:
             if cache.check_for_repetition():
-                return i+window_length+1
+                return i+window_length+1 # Return last index of window
 
         cache.push(char)
     
