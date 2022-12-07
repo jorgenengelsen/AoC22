@@ -8,7 +8,7 @@ class RollingWindow:
     
     def push(self, item):
         self.array.append(item)
-        if len(self.array) >= self.length:
+        if len(self.array) > self.length:
             self.pop() 
 
     def pop(self):
@@ -29,11 +29,11 @@ def find_packet_start(message: str, window_length: int):
 
         if not char in cache.array:
             if cache.check_for_repetition():
-                return i+window_length
+                return i+window_length+1
 
-        cache.push(i)
+        cache.push(char)
     
 print("Day 6, Part 1")
-print(find_packet_start(message, 4))
+print(find_packet_start(message, 3))
 print("Day 6, Part 2")
-print(find_packet_start(message, 14))
+print(find_packet_start(message, 13))
