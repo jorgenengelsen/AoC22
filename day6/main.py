@@ -33,6 +33,7 @@ def find_packet_start(message: str, window_length: int):
 
         cache.push(i)
     
-
+print("Day 6, Part 1")
 print(find_packet_start(message, 4))
+print("Day 6, Part 2")
 print(find_packet_start(message, 14))
